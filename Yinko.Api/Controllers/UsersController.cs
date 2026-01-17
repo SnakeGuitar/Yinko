@@ -36,9 +36,9 @@ namespace Yinko.Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<UserDto>> Login(LoginUserCommand command)
+        public async Task<ActionResult<UserDto>> Login([FromBody] string email)
         {
-            var userDto = await Mediator.Send(command);
+            var userDto = await Mediator.Send(new LoginUserCommand(email));
             return Ok(userDto);
         }
 
