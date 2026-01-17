@@ -32,6 +32,10 @@ namespace Yinko.Infrastructure.Persistence
 
             modelBuilder.Entity<BookTag>()
                 .HasKey(bt => new { bt.BookId, bt.TagId });
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
         }
     }
 }

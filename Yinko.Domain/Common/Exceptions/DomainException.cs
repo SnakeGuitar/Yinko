@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace Yinko.Domain.Common.Exceptions
+﻿namespace Yinko.Domain.Common.Exceptions
 {
     public abstract class DomainException : Exception
     {
         public string Code { get; }
-        protected DomainException(string code, string message) : base(message) 
+        protected DomainException(string code, string message) : base(message)
         {
             Code = code;
         }
@@ -25,6 +18,12 @@ namespace Yinko.Domain.Common.Exceptions
     public class InvalidUserException : DomainException
     {
         public InvalidUserException(string code, string message)
+            : base(code, message) { }
+    }
+
+    public class InvalidInkosAmountException : DomainException
+    {
+        public InvalidInkosAmountException(string code, string message)
             : base(code, message) { }
     }
 

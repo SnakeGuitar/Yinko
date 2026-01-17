@@ -2,25 +2,22 @@
 using Yinko.Application.Common.Interfaces;
 using Yinko.Domain.Common.Errors;
 using Yinko.Domain.Common.Exceptions;
-using Yinko.Domain.Entities;
 
-namespace Yinko.Application.Books.Commands.DeleteBook
+namespace Yinko.Application.Books.Commands.DeleteUser
 {
-    public class DeleteBookHandler : IRequestHandler<DeleteBookCommand, Unit>
+    public class DeleteUserHandler : IRequestHandler<DeleteUserCommand, Unit>
     {
         private readonly IApplicationDbContext _context;
-
-        public DeleteBookHandler(IApplicationDbContext context)
+        public DeleteUserHandler(IApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task<Unit> Handle(DeleteBookCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
             var user = await _context.Users.FindAsync(new object[] { request.Id }, cancellationToken);
-
             if (user == null)
             {
-                throw new NotFoundException(DomainErrors.User.NotFound, nameof(User), request.Id);
+                throw new NotFoundException(DomainErrors.User.NotFound, nameof(Domain.Entities.User), request.Id);
             }
 
             _context.Users.Remove(user);

@@ -4,11 +4,11 @@ using Yinko.Application.Common.Interfaces;
 using Yinko.Application.Common.Models;
 using Yinko.Domain.Common.Exceptions;
 using Yinko.Domain.Entities;
-public class GetBookQueryHandler : IRequestHandler<GetBookQuery, BookDto>
+public class GetBookHandler : IRequestHandler<GetBookQuery, BookDto>
 {
     private readonly IApplicationDbContext _context;
 
-    public GetBookQueryHandler(IApplicationDbContext context)
+    public GetBookHandler(IApplicationDbContext context)
     {
         _context = context;
     }
@@ -23,9 +23,9 @@ public class GetBookQueryHandler : IRequestHandler<GetBookQuery, BookDto>
             throw new NotFoundException("Book not found", nameof(Book), request.Id);
         }
 
-            // TODO: Change to AutoMapper mapping eventually :3
+        // TODO: Change to AutoMapper mapping eventually :3
 
-            return new BookDto
+        return new BookDto
         {
             Id = book.Id,
             Title = book.Title,
