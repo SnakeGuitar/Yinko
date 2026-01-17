@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Yinko.Api.Infrastructure;
 using Yinko.Application;
-using Yinko.Application.Books.Commands.CreateBook;
 using Yinko.Application.Common.Interfaces;
 using Yinko.Infrastructure.Persistence;
 
@@ -45,7 +44,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseCors("AllowSvelte");
 app.UseAuthorization();
 app.MapControllers();
