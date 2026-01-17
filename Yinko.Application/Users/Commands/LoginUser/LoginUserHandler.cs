@@ -5,7 +5,7 @@ using Yinko.Application.Common.Models;
 using Yinko.Domain.Common.Errors;
 using Yinko.Domain.Common.Exceptions;
 
-namespace Yinko.Application.Books.Commands.LoginUser
+namespace Yinko.Application.Users.Commands.LoginUser
 {
     public class LoginUserHandler : IRequestHandler<LoginUserCommand, UserDto>
     {

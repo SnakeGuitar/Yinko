@@ -1,15 +1,10 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Yinko.Application.Common.Interfaces;
 using Yinko.Domain.Common.Errors;
 using Yinko.Domain.Common.Exceptions;
 using Yinko.Domain.Entities;
 
-namespace Yinko.Application.Books.Commands.UpdateUser
+namespace Yinko.Application.Users.Commands.UpdateUser
 {
     public class UpdateUserHandler : IRequestHandler<UpdateUserCommand, Unit>
     {

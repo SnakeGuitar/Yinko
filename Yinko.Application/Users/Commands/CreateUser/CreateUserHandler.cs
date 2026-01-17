@@ -5,7 +5,7 @@ using Yinko.Domain.Common.Errors;
 using Yinko.Domain.Common.Exceptions;
 using Yinko.Domain.Entities;
 
-namespace Yinko.Application.Books.Commands.CreateUser
+namespace Yinko.Application.Users.Commands.CreateUser
 {
     public class CreateUserHandler : IRequestHandler<CreateUserCommand, int>
     {

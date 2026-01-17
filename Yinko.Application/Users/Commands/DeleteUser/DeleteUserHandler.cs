@@ -3,7 +3,7 @@ using Yinko.Application.Common.Interfaces;
 using Yinko.Domain.Common.Errors;
 using Yinko.Domain.Common.Exceptions;
 
-namespace Yinko.Application.Books.Commands.DeleteUser
+namespace Yinko.Application.Users.Commands.DeleteUser
 {
     public class DeleteUserHandler : IRequestHandler<DeleteUserCommand, Unit>
     {
