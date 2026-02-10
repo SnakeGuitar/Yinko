@@ -19,5 +19,14 @@ namespace Yinko.Domain.Entities
 
         public int BookId { get; set; }
         public Book? Book { get; set; }
+
+        public string GetContentForUser(int lastChapterReadId)
+        {
+            if (UnlockChapterId.HasValue && lastChapterReadId >= UnlockChapterId.Value)
+            {
+                return $"{DefinitionSafe}\n\n[Reveal]: {DefinitionSpoiler}";
+            }
+            return DefinitionSafe;
+        }
     }
 }
